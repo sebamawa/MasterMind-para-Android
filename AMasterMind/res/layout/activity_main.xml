@@ -1,0 +1,187 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollViewPrincipal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#CCCCFF"
+	    android:orientation="vertical" >
+	    
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="10dp"
+		    android:orientation="horizontal" >
+
+			<ImageView
+			    android:id="@+id/imageViewMente"
+			    android:layout_width="50dp"
+			    android:layout_height="50dp"
+			    android:src="@drawable/mente" />
+	    
+		    <TextView
+		        android:id="@+id/tvTitulo"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center"
+		        android:text="AMasterMind"
+		        android:textSize="35sp" />
+
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_margin="3dp"
+	        android:background="@drawable/borde1"
+	        android:orientation="horizontal" >
+
+	        <TextView
+	            android:id="@+id/tvModoJuego"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/tvModoJuego"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	        <RadioGroup
+	            android:id="@+id/RGModoJuego"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="5dp"
+	            android:orientation="vertical" >
+
+	            <RadioButton
+	                android:id="@+id/rbtnAdivinador"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:checked="true"
+	                android:text="@string/rbtnAdivinador" />
+
+	            <RadioButton
+	                android:id="@+id/rbtnPensador"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/rbtnPensador" />
+	        </RadioGroup>
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="3dp"
+	        android:background="@drawable/borde1"
+	        android:orientation="vertical" >
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="3dp"
+	            android:orientation="horizontal" >
+
+	            <TextView
+	                android:id="@+id/tvDificultad"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_margin="10dp"
+	                android:gravity="center_horizontal"
+	                android:text="@string/tvDificultad"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <RadioGroup
+	                android:id="@+id/RGDificultad"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="5dp"
+	                android:orientation="vertical" >
+
+	                <RadioButton
+	                    android:id="@+id/rbtnPrincipiante"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:checked="true"
+	                    android:text="@string/rbtnPrincipiante" />
+
+	                <RadioButton
+	                    android:id="@+id/rbtnModerado"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/rbtnModerado" />
+
+	                <RadioButton
+	                    android:id="@+id/rbtnExperto"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/rbtnExperto" />
+	            </RadioGroup>
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:orientation="vertical" >
+
+	        <TextView
+	            android:id="@+id/tvLargoCodigo"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/tvLargoCodigo" />
+
+	        <TextView
+	            android:id="@+id/tvDatosIntento"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/tvIntentos" />
+
+	        <TextView
+	            android:id="@+id/tvRango"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/tvRango" />
+	    </LinearLayout>
+
+	    </LinearLayout>
+
+
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="5dp"
+	        android:background="@drawable/borde1" >
+
+	        <Button
+	            android:id="@+id/btnJugar"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_horizontal"
+	            android:text="@string/btnJugar" />
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="5dp"
+	        android:background="@drawable/borde1" >
+
+	        <Button
+	            android:id="@+id/btnAyuda"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="0.5"
+	            android:text="@string/btnAyuda" />
+
+	        <Button
+	            android:id="@+id/btnSalir"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="0.5"
+	            android:text="@string/btnSalir" />
+	    </LinearLayout>
+	</LinearLayout>
+
+</ScrollView>

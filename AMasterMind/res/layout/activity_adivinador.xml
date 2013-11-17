@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutPrincipal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#CCFFFF"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+        	
+        <TextView
+            android:id="@+id/tvIngresarCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:text="@string/tvIngresarCodigo" />
+    
+    	<com.sebamawa.amastermind.EditTextAdivinador
+    	    android:id="@+id/etCodigoAdivinador"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_margin="5dp"
+    	    android:inputType="number" >
+    	</com.sebamawa.amastermind.EditTextAdivinador>
+    	    
+        <TextView
+            android:id="@+id/tvDatosPartida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvDatosPartida" />
+    
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="#CCCCFF" >
+    
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <TextView
+        android:id="@+id/tvDatosIntento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intento"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/btnConfirmarCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/btnConfirmarCodigo" />
+
+        <requestFocus />
+
+</LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>
