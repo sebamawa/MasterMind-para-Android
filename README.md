@@ -2,7 +2,7 @@ MasterMind-para-Android
 =======================
 Versión del juego de lógica - estrategia MasterMind para Android, realizado con el IDE Eclipse y el plugin ADT.
 
-El objetivo del juego (en modo Adivinador) consiste en decifrar un código numérico de largo n, donde n puede valer 
+El objetivo del juego consiste en decifrar un código numérico de largo n, donde n puede valer 
 4, 6 o 9, y cada dígito del código está en el rango [1..n], pudiéndose repetir dichos dígitos. Según el largo del código,
 se disponen de 10, 20 o 30 intentos para hallar el código secreto (llamado código del Pensador).
 Cada intento del jugador (Adivinador) por hallar el código del Pensador recibe información de lo próximo que está
