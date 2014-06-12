@@ -11,12 +11,6 @@ el código propuesto al del Pensador. Dicha información consiste en dos valores
 del Pensador y el propuesto por el Adivinador), y los dígitos que están en ambos códigos pero en posiciones
 distintas.
 
-Esta versión es una adaptación del proyecto propuesto en el curso "Aprende a programar desde cero" en la lección:
-http://www.foro.lospillaos.es/leccion-100-jmastermind-vt13298.html
-
-El proyecto anterior está propuesto para ser implementado en Java para escritorio, y lo que se ha hecho aquí es la
-adaptación del mismo para la plataforma Android.
-
 En el siguiente link se muestra una partida del juego:
 http://www.youtube.com/watch?v=E8g5FOz6xBQ&feature=youtu.be
 
