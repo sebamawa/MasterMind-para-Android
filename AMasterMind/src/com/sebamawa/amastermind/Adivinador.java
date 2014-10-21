@@ -31,14 +31,14 @@ public class Adivinador extends Activity {
 	Button btnConfirmarCodigoAdivinador;
 	LinearLayout layoutPrincipal;
 	
-	//private int MAX_INTENTOS;  //número máximo de intentos de la partida
+	//private int MAX_INTENTOS;  //nÃºmero mÃ¡ximo de intentos de la partida
 	
-	private String codigoPensadorString; //arreglo para almacenar el código del pensador
+	private String codigoPensadorString; //arreglo para almacenar el cÃ³digo del pensador
 	private String codigoAdivinadorString;  //para el Adivinador
 	
 	private int cuentaBuenos, cuentaRegulares;
-	private int intento = 0;  //número de intento del usuario
-	private String datosIntento ="";  //para mostrar al usuario número de intento,
+	private int intento = 0;  //nÃºmero de intento del usuario
+	private String datosIntento ="";  //para mostrar al usuario nÃºmero de intento,
 									  //buenos y regulares (en un TextView)
 
 		
@@ -51,10 +51,10 @@ public class Adivinador extends Activity {
         //referencia componentes
         referenciarComponentes();
         
-//        //establece la configuración (dificultad) del juego
+//        //establece la configuraciÃ³n (dificultad) del juego
 //        establecerDificultad(); 
         
-        //genera el código a adivinar (del pensador) según la dificultad elegida
+        //genera el cÃ³digo a adivinar (del pensador) segÃºn la dificultad elegida
         codigoPensadorString = generarCodigo(MainActivity.dificultad);  
         
         //muestra los datos de la partida en un TextView
@@ -67,26 +67,26 @@ public class Adivinador extends Activity {
         tvDatosPartida.setText("ModoJuego: "+datosPartida+"; Rango: [1 ; "+MainActivity.LARGO_CODIGO+"]");
 
         
-        //si se presiona el botón se lee el código introducido en el campo
-        //y muestra resultados (número de intento y número de buenos y regulares)
+        //si se presiona el botÃ³n se lee el cÃ³digo introducido en el campo
+        //y muestra resultados (nÃºmero de intento y nÃºmero de buenos y regulares)
         btnConfirmarCodigoAdivinador.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-	    		intento++;  //aumentamos en 1 el número de intento
+	    		intento++;  //aumentamos en 1 el nÃºmero de intento
 	    		
-		    	//sólo si el código introducido tiene el largo adecuado comparamos
-		    	//códigos del pensador y adivinador
+		    	//sÃ³lo si el cÃ³digo introducido tiene el largo adecuado comparamos
+		    	//cÃ³digos del pensador y adivinador
 		    	if (etCodigoAdivinador.getText().length() == MainActivity.LARGO_CODIGO){
 		    		
-		    		codigoAdivinadorString = leerDesdeCampo();  //leemos el código introducido en el campo
+		    		codigoAdivinadorString = leerDesdeCampo();  //leemos el cÃ³digo introducido en el campo
 		    		  			    		
 		    		cuentaBuenos = 0;
 		    		//String codigoPens = codigoPensadorString;  //auxiliar
 		    		//String codigoAd = codigoAdivinadorString;  //auxiliar
 		    		
-		    		//convertimos los códigos del pensador y adivinador a arreglos de char para
-		    		//facilitar el cálculo de buenos y regulares.
+		    		//convertimos los cÃ³digos del pensador y adivinador a arreglos de char para
+		    		//facilitar el cÃ¡lculo de buenos y regulares.
 		    		char[] codigoPensArr = codigoPensadorString.toCharArray();
 		    		char[] codigoAdArr = codigoAdivinadorString.toCharArray();
 		    		for (int i=0; i<=codigoPensadorString.length()-1; i++){
@@ -104,21 +104,21 @@ public class Adivinador extends Activity {
 		    				if (j!=i && codigoAdArr[j] == codigoPensArr[i]){
 		    					cuentaRegulares++;
 			    				codigoAdArr[i] = '*';
-			    				codigoPensArr[i] = '#';	
+			    				codigoPensArr[j] = '#';	//Corregido. Antes: codigoPensArr[i] = '#'
 		    				}
 		    			}//de for interno
 		    		}  //del for externo
 		    			
 		    		
-		    		//mostramos datos (número de intento y números de buenos y regulares)
+		    		//mostramos datos (nÃºmero de intento y nÃºmeros de buenos y regulares)
 		    		mostrarDatosIntento();
 		    		
 		    		
 		    		//mostramos resultados
 		    		if (intento == MainActivity.MAX_INTENTOS && cuentaBuenos<MainActivity.LARGO_CODIGO){
-//		    			mostrarMensaje("Lo siento has perdido, el código era "+codigoPensadorString);
+//		    			mostrarMensaje("Lo siento has perdido, el cÃ³digo era "+codigoPensadorString);
 		    			layoutPrincipal.setVisibility(View.INVISIBLE);
-		    			mostrarMensaje("Lo siento has perdido, el código era "+codigoPensadorString);
+		    			mostrarMensaje("Lo siento has perdido, el cÃ³digo era "+codigoPensadorString);
 		    			//delay de 4 segundos
 						Handler handler = new Handler();
 						handler.postDelayed(new Runnable() {
@@ -137,7 +137,7 @@ public class Adivinador extends Activity {
 		    				//lanzamos la Activity de fin de juego
 		    				Intent intentFinJuego = new Intent(Adivinador.this, FinDeJuego.class);
 		    				startActivity(intentFinJuego);
-			    			mostrarMensaje("Felicitaciones, has ganado. El código era "+codigoPensadorString);
+			    			mostrarMensaje("Felicitaciones, has ganado. El cÃ³digo era "+codigoPensadorString);
 			    			
 		    			}
 		    			    		
@@ -145,7 +145,7 @@ public class Adivinador extends Activity {
 		    		etCodigoAdivinador.setText("");
 	
 				}else{
-					mostrarMensaje("El código no tiene "+MainActivity.LARGO_CODIGO+" dígitos");
+					mostrarMensaje("El cÃ³digo no tiene "+MainActivity.LARGO_CODIGO+" dÃ­gitos");
 				}
 	    		
 			}
@@ -165,28 +165,28 @@ public class Adivinador extends Activity {
     
     //======================================================================//
     
-    //genera el código a adivinar según el nivel de dificultad
+    //genera el cÃ³digo a adivinar segÃºn el nivel de dificultad
     private String generarCodigo(MainActivity.DIFICULTAD dif){
     	int[] codigoArr;
     	Random ran = new Random();
     	
-//    	//según la dificultad establecemos el largo de código adecuado
+//    	//segÃºn la dificultad establecemos el largo de cÃ³digo adecuado
 //    	switch (dif){
 //    		case PRINCIPIANTE: MainActivity.LARGO_CODIGO = 4; break;
 //    		case MODERADO: MainActivity.LARGO_CODIGO = 6; break;
 //    		case EXPERTO: MainActivity.LARGO_CODIGO = 9; break;
 //    	}
     	
-    	//inicializamos el arreglo del código con el tamaño apropiado de celdas
+    	//inicializamos el arreglo del cÃ³digo con el tamaÃ±o apropiado de celdas
     	codigoArr = new int[MainActivity.LARGO_CODIGO];
     	
     	
-    	//generamos el código aleatorio (puede tener números repetidos (caso sencillo))
+    	//generamos el cÃ³digo aleatorio (puede tener nÃºmeros repetidos (caso sencillo))
     	for (int i=0; i<=MainActivity.LARGO_CODIGO-1; i++){
     		codigoArr[i] = ran.nextInt(MainActivity.LARGO_CODIGO) + 1;
     	}
     	
-    	//transformamos el código a String por comodidad(usando for each)
+    	//transformamos el cÃ³digo a String por comodidad(usando for each)
     	String codigoString ="";
     	for (int n: codigoArr){
 //    		codigoString += n +" ";
@@ -207,7 +207,7 @@ public class Adivinador extends Activity {
     //===============================================================================//
     
     private void mostrarDatosIntento(){
-    	datosIntento += "Intento "+intento+" ; CóDIGO: "+
+    	datosIntento += "Intento "+intento+" ; CÃ³DIGO: "+
     			etCodigoAdivinador.getText().toString()+"\n"+
     			"Buenos = "+cuentaBuenos+" ; Regulares = "+cuentaRegulares+"\n";
     	tvDatosIntento.setText(datosIntento);
@@ -227,7 +227,7 @@ public class Adivinador extends Activity {
     private void mostrarAlerta(String mensaje){
     	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	builder.setMessage(mensaje)
-    		   .setTitle("Atención!!")
+    		   .setTitle("AtenciÃ³n!!")
     		   .setCancelable(false)
     		   .setPositiveButton("Si", new DialogInterface.OnClickListener() {
 				
@@ -251,6 +251,6 @@ public class Adivinador extends Activity {
     
     @Override
     public void onBackPressed() {
-    	mostrarAlerta("Está seguro que desea volver al Menú Principal?");
+    	mostrarAlerta("EstÃ¡ seguro que desea volver al MenÃº Principal?");
     }
 }  //de la clase Adivinador
